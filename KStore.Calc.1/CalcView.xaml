@@ -1,0 +1,45 @@
+﻿<Window x:Class="KStore.Calc._2.CalcView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KStore.Calc._2"
+        mc:Ignorable="d"
+        Title="Calc" Height="350" Width="525"
+       
+        >
+    <Grid>      
+        <StackPanel>
+            <StackPanel>
+                <Border Height="10" Background="Black"/>
+                <TextBlock Text="must be between 0 and 1000." Foreground="Black" TextAlignment="Center" />
+                <TextBlock Text="{Binding ElementName=RangeValidationValue, Path=(Validation.Errors)[0].ErrorContent}" Foreground="Red"  TextAlignment="Center" />
+                <TextBox Text="{Binding RangeValidationValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="RangeValidationValue" VerticalContentAlignment="Center" TextAlignment="Center" />
+            </StackPanel>
+            <StackPanel>
+                <Border Height="10" Background="Black"/>
+                <TextBlock Text="must be multi-byte-char or half-width kana." Foreground="Black" TextAlignment="Center" />
+                <TextBlock Text="{Binding ElementName=MultiByteValidationValue, Path=(Validation.Errors)[0].ErrorContent}" Foreground="Red" TextAlignment="Center" />
+                <TextBox Text="{Binding MultiByteValidationValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="MultiByteValidationValue" VerticalContentAlignment="Center" TextAlignment="Center" />
+            </StackPanel>
+            <StackPanel>
+                <Border Height="10" Background="Black"/>
+                <TextBlock Text="must be email-format" Foreground="Black" TextAlignment="Center" />
+                <TextBlock Text="{Binding ElementName=EmailValidationValue, Path=(Validation.Errors)[0].ErrorContent}" Foreground="Red" TextAlignment="Center" />
+                <TextBox Text="{Binding EmailValidationValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="EmailValidationValue" VerticalContentAlignment="Center" TextAlignment="Center" />
+            </StackPanel>
+            <StackPanel>
+                <Border Height="10" Background="Black"/>
+                <TextBlock Text="must be phone-format" Foreground="Black" TextAlignment="Center" />
+                <TextBlock Text="{Binding ElementName=PhoneValidationValue, Path=(Validation.Errors)[0].ErrorContent}" Foreground="Red" TextAlignment="Center" />
+                <TextBox Text="{Binding PhoneValidationValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="PhoneValidationValue" VerticalContentAlignment="Center" TextAlignment="Center" />
+            </StackPanel>
+            <StackPanel>
+                <Border Height="10" Background="Black"/>
+                <TextBlock Text="must be url-format" Foreground="Black" TextAlignment="Center" />
+                <TextBlock Text="{Binding ElementName=UrlValidationValue, Path=(Validation.Errors)[0].ErrorContent}" Foreground="Red" TextAlignment="Center" />
+                <TextBox Text="{Binding UrlValidationValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="UrlValidationValue" VerticalContentAlignment="Center" TextAlignment="Center" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
