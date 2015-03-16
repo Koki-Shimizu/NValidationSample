@@ -133,6 +133,78 @@ namespace KStore.Calc._2
             }
         }
 
+        private string _minLengthValidationValue;
+
+        [Required(ErrorMessage = "{0} is required.")]
+        [MinLength(5, ErrorMessage = "Value for {0} must be bigger {1}.")]
+        public string MinLengthValidationValue
+        {
+            get { return _minLengthValidationValue; }
+            set
+            {
+                this.SetProperty(ref this._minLengthValidationValue, value);
+                this.ValidateProperty(value);
+            }
+        }
+
+        private string _maxLengthValidationValue;
+
+        [Required(ErrorMessage = "{0} is required.")]
+        [MaxLength(5, ErrorMessage = "Value for {0} must be smaller {1}.")]
+        public string MaxLengthValidationValue
+        {
+            get { return _maxLengthValidationValue; }
+            set
+            {
+                this.SetProperty(ref this._maxLengthValidationValue, value);
+                this.ValidateProperty(value);
+            }
+        }
+
+        private string _fileExtensionsLengthValidationValue;
+
+        [Required(ErrorMessage = "{0} is required.")]
+        [FileExtensions( Extensions=".jpg,.xml,.xlsx", ErrorMessage = "Please specify a valid file ({1})")]
+        public string FileExtensionsValidationValue
+        {
+            get { return _fileExtensionsLengthValidationValue; }
+            set
+            {
+                this.SetProperty(ref this._fileExtensionsLengthValidationValue, value);
+                this.ValidateProperty(value);
+            }
+        }
+
+        private string _stringLengthValidationValue;
+
+        [Required(ErrorMessage = "{0} is required.")]
+        [StringLength(10, MinimumLength = 5, ErrorMessage = "Value for {0} must be between {1} and {2}.")]
+        public string StringLengthValidationValue
+        {
+            get { return _stringLengthValidationValue; }
+            set
+            {
+                this.SetProperty(ref this._stringLengthValidationValue, value);
+                this.ValidateProperty(value);
+            }
+        }
+
+        private string _timestampValidationValue;
+
+        [Required(ErrorMessage = "{0} is required.")]
+        [Range(typeof(DateTime), "2011/1/1 12:00:00", "2016/1/1 03:00:00", ErrorMessage = "Value for {0} must be between {1} and {2}.")]
+        public string TimestampValidationValue
+        {
+            get { return _timestampValidationValue; }
+            set
+            {
+                this.SetProperty(ref this._timestampValidationValue, value);
+                this.ValidateProperty(value);
+            }
+        }
+
+
+
         internal bool ValidateAllObjects()
         {
             if (!this.HasErrors)

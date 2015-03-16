@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KStore.Calc._2"
         mc:Ignorable="d"
-        Title="Calc" Height="350" Width="525"
+        Title="Calc" Height="800" Width="525"
        
         >
     <Grid>      
@@ -39,6 +39,36 @@
                 <TextBlock Text="must be url-format" Foreground="Black" TextAlignment="Center" />
                 <TextBlock Text="{Binding ElementName=UrlValidationValue, Path=(Validation.Errors)[0].ErrorContent}" Foreground="Red" TextAlignment="Center" />
                 <TextBox Text="{Binding UrlValidationValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="UrlValidationValue" VerticalContentAlignment="Center" TextAlignment="Center" />
+            </StackPanel>
+            <StackPanel>
+                <Border Height="10" Background="Black"/>
+                <TextBlock Text="最小" Foreground="Black" TextAlignment="Center" />
+                <TextBlock Text="{Binding ElementName=MinLengthValidationValue, Path=(Validation.Errors)[0].ErrorContent}" Foreground="Red" TextAlignment="Center" />
+                <TextBox Text="{Binding MinLengthValidationValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="MinLengthValidationValue" VerticalContentAlignment="Center" TextAlignment="Center" />
+            </StackPanel>
+            <StackPanel>
+                <Border Height="10" Background="Black"/>
+                <TextBlock Text="最大" Foreground="Black" TextAlignment="Center" />
+                <TextBlock Text="{Binding ElementName=MaxLengthValidationValue, Path=(Validation.Errors)[0].ErrorContent}" Foreground="Red" TextAlignment="Center" />
+                <TextBox Text="{Binding MaxLengthValidationValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="MaxLengthValidationValue" VerticalContentAlignment="Center" TextAlignment="Center" />
+            </StackPanel>
+            <StackPanel>
+                <Border Height="10" Background="Black"/>
+                <TextBlock Text="ファイル名" Foreground="Black" TextAlignment="Center" />
+                <TextBlock Text="{Binding ElementName=FileExtensionsValidationValue, Path=(Validation.Errors)[0].ErrorContent}" Foreground="Red" TextAlignment="Center" />
+                <TextBox Text="{Binding FileExtensionsValidationValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="FileExtensionsValidationValue" VerticalContentAlignment="Center" TextAlignment="Center" />
+            </StackPanel>
+            <StackPanel>
+                <Border Height="10" Background="Black"/>
+                <TextBlock Text="文字数範囲" Foreground="Black" TextAlignment="Center" />
+                <TextBlock Text="{Binding ElementName=StringLengthValidationValue, Path=(Validation.Errors)[0].ErrorContent}" Foreground="Red" TextAlignment="Center" />
+                <TextBox Text="{Binding StringLengthValidationValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="StringLengthValidationValue" VerticalContentAlignment="Center" TextAlignment="Center" />
+            </StackPanel>
+            <StackPanel>
+                <Border Height="10" Background="Black"/>
+                <TextBlock Text="Date" Foreground="Black" TextAlignment="Center" />
+                <TextBlock Text="{Binding ElementName=TimestampValidationValue, Path=(Validation.Errors)[0].ErrorContent}" Foreground="Red" TextAlignment="Center" />
+                <TextBox Text="{Binding TimestampValidationValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="TimestampValidationValue" VerticalContentAlignment="Center" TextAlignment="Center" />
             </StackPanel>
         </StackPanel>
     </Grid>
